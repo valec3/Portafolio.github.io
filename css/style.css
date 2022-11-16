@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;200;300;400;600;800&display=swap');
+
+:root{
+    --negro: #1e2326;
+    --fuxia: #1cb698;
+    --blanco: #fff;
+}
+
+/*GLOBALES*/
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+html{
+    /* 1rem = 10px */
+    font-size: 62.5%;
+    /*Nos permite deslizar cuadn o hago click en los links del menu*/
+    scroll-behavior: smooth;
+}
+
+/*MENU*/
+.contenedor-header{
+    background: var(--negro);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left:0;
+    z-index: 500;
+
+}
+.contenedor-header header{
+    max-width:110rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 1.5rem 2rem;
+}
+.contenedor-header header .logo a{
+    font-family: 'Righteous';
+    font-size: 3.6rem;
+    color: var(--fuxia);
+    text-decoration: none;
+}
+.contenedor-header header ul{
+    display: flex;
+    list-style:none;    
+}
+
+.nav-option a{ /*.contenedor-header header nav ul li a*/
+    text-align: center;
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--blanco);
+    padding: 0.3rem 1.3rem;
+    transition: .5s;/*REVISAR*/
+}
+.nav-option a:hover{
+    color: var(--fuxia);
+}
+/*Menu hamburguesa*/
+.bars__menu{
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    display: none;
+}
+.bars__menu span{
+    display: block;
+    width: 100%;
+    margin: 0.6rem;
+    height: 0.2rem;
+    background-color: var(--fuxia);
+    transform-origin: 0px 100%;
+    transition: all 600ms;
+}
+.activeline1__bars-menu{
+    transform:rotate(45deg) translate(-2px,1px)
+}
+.activeline2__bars-menu{
+    opacity: 0;
+    margin-left: -5rem;
+}
+.activeline3__bars-menu{
+    transform: rotate(-45deg) translate(-4px,2px);
+}
+/*NAV RESPONSIVO   */
+
+
+/*SECCION  I  N  I  C  I  O*/
+.particulas{
+    z-index: ;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+
+}
+.inicio{
+
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.inicio .contenido-banner{/*MODIFICAR AAAAAAAAAAAA*/
+    padding: 2rem;
+    background-color: var(--negro);
+    max-width: 35rem;
+    margin: auto;
+    text-align: center;
+    border-radius: 4rem;
+    z-index: 50;
+}
+.inicio .contenido-banner img{
+    margin: 4rem;
+    border: 1rem solid var(--fuxia);
+    display: block;
+    width: 80%;
+    margin: auto;
+    border-radius: 100%;
+}
+.inicio .contenido-banner h1{
+    margin-top: 4rem;
+    font-size: 4.2rem;
+    font-family:'Righteous';
+}
+.inicio .contenido-banner h2{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+                /* I C O N O S    D E    R E D E S*/
+.inicio .contenido-banner .redes a{
+    color: var(--blanco);
+    display: inline-block;
+    text-decoration: none;
+    border: 0.1rem solid var(--blanco);
+    border-radius: 100%;
+    width: 4.2rem;
+    height: 4.2rem;
+    line-height: 4.2rem;
+    margin: 4rem 0.5rem;
+    font-size: 2rem;
+    transition: .3s/*REVISARRRRRRRRR*/;
+
+}
+.inicio .contenido-banner .redes a:hover{
+    background-color: var(--fuxia);
+    color: var(--negro);
+}
+                /**/
+/*S O B R E    M I */
+
+.sobremi{
+    background-color: #1e2326;
+    color: #fff;
+    padding: 5rem 2rem;
+}
+.sobremi .contenido-seccion{
+    max-width: 110rem;
+    margin: auto;
+}
+.sobremi h2{
+    font-size: 4.8rem;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 2rem 0;
+}
+.sobremi .contenido-seccion p{
+    font-size: 1.8rem;
+    margin: bottom 2re; ;
+}
+.sobremi .contenido-seccion p span{
+    color: var(--fuxia);
+    font-weight: bold;
+}
+.sobremi .fila{
+    display: flex;
+}
+.sobremi .fila .col{
+    width:50% ;
+}
+.sobremi .fila .col h3{
+    font-size: 2.8rem;
+    font-family: 'Righteous';
+    margin-bottom: 2.5rem;
+}
+
+/*R E S P O N S I V E    D E S I G N */
+@media screen and (max-width:980px){
+    
+    .menu{
+        /* display: none; */
+        height: 0;
+        width: 100%;
+        transition: all .6s ease;
+    }
+    .menu-activate{
+        /* display: block; */
+        height: 40vh;
+    }
+    .menu .menu__options{
+        position: relative;
+        left: -100%;
+        flex-direction: column;
+        transition: all .5s ease;
+        opacity: 0;
+    }
+    .menu .menu__letras-active{
+        display: flex;
+        left: 0 ;
+        opacity: 1;
+    }
+    .bars__menu{
+        display: block;
+        z-index: 999;
+    }
+    .nav-option{
+        text-align: center;
+        margin: 2rem 0;
+    }
+}
